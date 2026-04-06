@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.omc/
+*.log
+.DS_Store
+mikro-orm.config.ts
+src/entities/
+src/migrations/

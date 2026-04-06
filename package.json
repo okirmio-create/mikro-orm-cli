@@ -1,0 +1,28 @@
+{
+  "name": "@asdsadw12312dwd2112xz/mikro-orm-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for generating MikroORM configuration and entity boilerplate",
+  "type": "module",
+  "bin": {
+    "mikro-orm-config": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test:help": "node dist/index.js --help",
+    "test:init": "node dist/index.js init pg --db-name testdb",
+    "test:entity": "node dist/index.js entity UserProfile",
+    "test:validate": "node dist/index.js validate"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  }
+}
