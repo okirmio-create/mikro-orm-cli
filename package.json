@@ -4,24 +4,27 @@
   "description": "CLI tool for generating MikroORM configuration and entity boilerplate",
   "type": "module",
   "bin": {
-    "mikro-orm-config": "./dist/index.js"
+    "mikro-orm-cli": "./dist/index.js"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "node node_modules/tsup/dist/cli-default.js",
     "test:help": "node dist/index.js --help",
-    "test:init": "node dist/index.js init pg --db-name testdb",
+    "test:init": "node dist/index.js init postgresql --db-name testdb",
     "test:entity": "node dist/index.js entity UserProfile",
-    "test:validate": "node dist/index.js validate"
+    "test:migration": "node dist/index.js migration AddUserRole",
+    "test:seeder": "node dist/index.js seeder UserSeeder",
+    "test:embeddable": "node dist/index.js embeddable Address",
+    "test:subscriber": "node dist/index.js subscriber UserSubscriber"
   },
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^12.1.0"
   },
   "devDependencies": {
+    "@types/node": "^25.5.2",
     "tsup": "^8.3.0",
     "typescript": "^5.6.0"
   }
